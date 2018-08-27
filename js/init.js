@@ -9,7 +9,8 @@ var assets ={
     'treeCluster' : 'img/tree_cluster.png',
     'rock1' : 'img/rock_1.png',
     'rock2' : 'img/rock_2.png',
-    'bg' : 'img/bg.png'
+    'bg' : 'img/bg.png',
+    'skierJump':'img/skier_jump_3.png'
 };
 var obstacleTypes = [
     'tree',

@@ -98,7 +98,10 @@ var setupKeyhandler = function() {
                 event.preventDefault();
                 break;
             case control.UP: // up
-               
+                if(skier.getDirection()===direction.BOTTOM_LEFT||skier.getDirection()===direction.BOTTOM||skier.getDirection()===direction.BOTTOM_RIGHT){
+                    console.log('jump...');
+                    skier.jump();
+                }
                 event.preventDefault();
                 break;
             case control.DOWN: // down

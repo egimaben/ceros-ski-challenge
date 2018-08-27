@@ -3,19 +3,19 @@
 Welcome to the Ceros Code Challenge - Ski Edition!
 
 For this challenge, we have included some base code for Ceros Ski, our version of the classic Windows game SkiFree. If
-you've never heard of SkiFree, Google has plenty of examples. Better yet, you can play our version here: 
-http://ceros-ski.herokuapp.com/  
+you've never heard of SkiFree, Google has plenty of examples. Better yet, you can play our version here:
+http://ceros-ski.herokuapp.com/
 
-We understand that everyone has varying levels of free time, so take a look through the requirements below and let us 
-know when you will have something for us to look at (we also get to see how well you estimate and manage your time!). 
+We understand that everyone has varying levels of free time, so take a look through the requirements below and let us
+know when you will have something for us to look at (we also get to see how well you estimate and manage your time!).
 If anything is unclear, don't hesitate to reach out.
 
 Requirements:
 * The base game that we've sent you is not what we would consider production ready code. In fact, it's pretty far from
   it. As part of our development cycle, all code must go through a review. We would like you to perform a review
   on the base code and fix/refactor it until you believe it would be ready for production. Feel free to update the
-  code/architecture as you see fit. If you feel that something should be done a better way, by all means do it! What 
-  design patterns could we use? Is the codebase maintainable, unit-testable, and scalable? How hard would it be to add 
+  code/architecture as you see fit. If you feel that something should be done a better way, by all means do it! What
+  design patterns could we use? Is the codebase maintainable, unit-testable, and scalable? How hard would it be to add
   a feature? Show us!
 * There is a bug in the game. Well, at least one bug that we know of. Use the following bug report to debug the code
   and fix it. (DONE)
@@ -40,13 +40,13 @@ Bonus:
 * Provide a way to reset the game once the game is over
 * Provide a way to pause and resume the game
 * Skier should get faster as the game progresses
-* Deploy the game to a server so that we can play it without setting something up ourselves. We've included a 
-  package.json and web.js file that will enable this to run on Heroku. Feel free to use those or use your own code to 
+* Deploy the game to a server so that we can play it without setting something up ourselves. We've included a
+  package.json and web.js file that will enable this to run on Heroku. Feel free to use those or use your own code to
   deploy to a cloud service if you want.
 * Write unit tests for your code
 
 And don't think you have to stop there. If you're having fun with this and have the time, feel free to add anything else
-you want and show us what you can do! 
+you want and show us what you can do!
 
 We are looking forward to see what you come up with!
 
@@ -56,8 +56,8 @@ Completed
 * Fixed Bug
 * Added night sky back ground
 * Refactored Code(well, partly :))
+* jump
 
 Not Completed
-* Jumps
 * Score
 * Feed the Rhino

@@ -3,6 +3,16 @@ function Skier(){
     var skierMapX = 0;
     var skierMapY = 0;
     var skierSpeed = 6;
+    var jumping = false;
+    function jump() {              
+        if (!jumping) {
+          jumping = true;
+          setTimeout(land, 500);
+        }
+      }
+      function land(){
+          jumping=false;
+      }
 
     var getDirection = function(){
         return skierDirection;
@@ -41,13 +51,14 @@ function Skier(){
                 skierAssetName = 'skierLeft';
                 break;
             case direction.BOTTOM_LEFT:
-                skierAssetName = 'skierLeftDown';
+                skierAssetName = jumping?'skierJump':'skierLeftDown';
                 break;
             case direction.BOTTOM:
-                skierAssetName = 'skierDown';
+                skierAssetName = jumping?'skierJump':'skierDown';
+                
                 break;
             case direction.BOTTOM_RIGHT:
-                skierAssetName = 'skierRightDown';
+                skierAssetName = jumping?'skierJump':'skierRightDown';
                 break;
             case direction.RIGHT:
                 skierAssetName = 'skierRight';
@@ -85,7 +96,7 @@ function Skier(){
             return intersectRect(skierRect, obstacleRect);
         });
 
-        if(collision) {
+        if(collision && !jumping) {
             skierDirection = direction.CRUSH;
         }
     }
@@ -120,7 +131,8 @@ function Skier(){
         moveLeft:moveLeft,
         moveRight:moveRight,
         turnLeftWards:turnLeftWards,
-        turnRightWards:turnRightWards
+        turnRightWards:turnRightWards,
+        jump:jump
 
     }
 
