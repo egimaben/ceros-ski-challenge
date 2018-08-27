@@ -50,7 +50,7 @@ you want and show us what you can do!
 
 We are looking forward to see what you come up with!
 
-#Results
+# Results
 
 Completed
 * Fixed Bug
