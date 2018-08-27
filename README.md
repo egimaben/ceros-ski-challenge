@@ -50,12 +50,14 @@ you want and show us what you can do!
 
 We are looking forward to see what you come up with!
 
-# Completed
-## Fixed Bug
-## Added night sky back ground
-## Refactored Code(well, partly :))
+#Results
 
-# Not Completed
-## Jumps
-## Score
-## Feed the Rhino
+Completed
+* Fixed Bug
+* Added night sky back ground
+* Refactored Code(well, partly :))
+
+Not Completed
+* Jumps
+* Score
+* Feed the Rhino
