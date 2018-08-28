@@ -21,7 +21,6 @@ var calculateOpenPosition = function(minX, maxX, minY, maxY) {
 };
 //called continuosly when direction is down
 var placeRandomObstacle = function(minX, maxX, minY, maxY) {
-
     var obstacleIndex = _.random(0, obstacleTypes.length - 1);
 
     var position = calculateOpenPosition(minX, maxX, minY, maxY);
@@ -31,6 +30,7 @@ var placeRandomObstacle = function(minX, maxX, minY, maxY) {
         x : position.x,
         y : position.y
     })
+    skier.score();
 };
 //runs for every displacement of skier
 var placeNewObstacle = function(direction) {
@@ -99,7 +99,6 @@ var setupKeyhandler = function() {
                 break;
             case control.UP: // up
                 if(skier.getDirection()===direction.BOTTOM_LEFT||skier.getDirection()===direction.BOTTOM||skier.getDirection()===direction.BOTTOM_RIGHT){
-                    console.log('jump...');
                     skier.jump();
                 }
                 event.preventDefault();
@@ -172,7 +171,8 @@ var setupKeyhandler = function() {
 
         skier.didHitObstacle();
         ctx.drawImage(loadedAssets['bg'],0,0,gameWidth,gameHeight);
-
+        
+        document.getElementById('score').innerHTML = skier.getScore();
         skier.draw();
 
         drawObstacles();

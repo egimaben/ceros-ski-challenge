@@ -57,7 +57,8 @@ Completed
 * Added night sky back ground
 * Refactored Code(well, partly :))
 * jump
+* Score
 
 Not Completed
-* Score
+* score storage
 * Feed the Rhino

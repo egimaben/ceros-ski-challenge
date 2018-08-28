@@ -4,6 +4,7 @@ function Skier(){
     var skierMapY = 0;
     var skierSpeed = 6;
     var jumping = false;
+    var currentScore = 0;
     function jump() {              
         if (!jumping) {
           jumping = true;
@@ -13,7 +14,12 @@ function Skier(){
       function land(){
           jumping=false;
       }
-
+    var getScore = function(){
+        return currentScore;
+    }
+    var score = function (){
+        currentScore += 1;
+    }
     var getDirection = function(){
         return skierDirection;
     }
@@ -107,16 +113,19 @@ function Skier(){
                 case direction.BOTTOM_LEFT:
                     skierMapX -= Math.round(skierSpeed / 1.4142);
                     skierMapY += Math.round(skierSpeed / 1.4142);
+                    score();
                     break;
                 case direction.BOTTOM:
     
                 //move down
-                    skierMapY += skierSpeed;    
+                    skierMapY += skierSpeed;   
+                    score(); 
                     break;
                 case direction.BOTTOM_RIGHT:
                 //move right down
                     skierMapX += skierSpeed / 1.4142;
                     skierMapY += skierSpeed / 1.4142;
+                    score();
                     break;
             }
         };
@@ -132,7 +141,9 @@ function Skier(){
         moveRight:moveRight,
         turnLeftWards:turnLeftWards,
         turnRightWards:turnRightWards,
-        jump:jump
+        jump:jump,
+        score:score,
+        getScore:getScore
 
     }
 
