@@ -4,7 +4,8 @@
     "description": "",
     "main": "web.js",
     "scripts": {
-        "start": "node web.js"
+        "start": "node web.js",
+        "test": "mocha"
     },
     "author": "dan.wash@ceros.com",
     "license": "",
@@ -13,5 +14,8 @@
     },
     "dependencies": {
         "http-server": "^0.10.0"
+    },
+    "devDependencies": {
+        "mocha": "^5.2.0"
     }
 }

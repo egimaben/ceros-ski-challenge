@@ -58,7 +58,9 @@ Completed
 * Refactored Code(well, partly :))
 * jump
 * Score
+* setup testing runnable with `npm test`, ready to write tests
 
 Not Completed
 * score storage
+*
 * Feed the Rhino
