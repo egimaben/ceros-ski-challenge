@@ -62,5 +62,8 @@ Completed
 
 Not Completed
 * score storage
-*
 * Feed the Rhino
+* game resetting
+* increase skier speed as game progresses
+* pausing / resume
+* deploy to server
