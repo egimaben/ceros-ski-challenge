@@ -1,6 +1,7 @@
 $(document).ready(function() {
 var skier = new Skier();
 var paused = false;
+var initStage = true;
 
 var calculateOpenPosition = function(minX, maxX, minY, maxY) {
     var x = _.random(minX, maxX);
@@ -32,7 +33,9 @@ var placeRandomObstacle = function(minX, maxX, minY, maxY) {
         x : position.x,
         y : position.y
     })
+    if(!initStage){
     skier.score();
+}
 };
 //runs for every displacement of skier
 var placeNewObstacle = function(direction) {
@@ -201,7 +204,7 @@ var setupKeyhandler = function() {
         setupKeyhandler();
         loadAssets().then(function() {
             placeInitialObstacles();
-
+            initStage = false;
             requestAnimationFrame(gameLoop);
         });
     };
