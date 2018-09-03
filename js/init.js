@@ -22,7 +22,8 @@ var control = {
     'UP':38,
     'RIGHT':39,
     'DOWN':40,
-    'LEFT':37
+    'LEFT':37,
+    'SPACE':32
 };
 var direction = {
     'CRUSH':0,

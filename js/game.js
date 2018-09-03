@@ -1,5 +1,6 @@
 $(document).ready(function() {
 var skier = new Skier();
+var paused = false;
 
 var calculateOpenPosition = function(minX, maxX, minY, maxY) {
     var x = _.random(minX, maxX);
@@ -19,6 +20,7 @@ var calculateOpenPosition = function(minX, maxX, minY, maxY) {
         }
     }
 };
+
 //called continuosly when direction is down
 var placeRandomObstacle = function(minX, maxX, minY, maxY) {
     var obstacleIndex = _.random(0, obstacleTypes.length - 1);
@@ -68,7 +70,14 @@ var placeNewObstacle = function(direction) {
 };
 
 var setupKeyhandler = function() {
-    $(window).keydown(function(event) {
+    $(window).keyup(function(event){
+        switch(event.which){
+            case control.SPACE:
+            paused = !paused;
+            requestAnimationFrame(gameLoop);
+            ;break;
+        }
+    }).keydown(function(event) {
         switch(event.which) {
             case control.LEFT: // left
                 //if direction is already left
@@ -158,6 +167,7 @@ var setupKeyhandler = function() {
 
    
     var gameLoop = function() {
+        if(!paused){
         ctx.save();
 
         // Retina support
@@ -180,8 +190,11 @@ var setupKeyhandler = function() {
         ctx.restore();
 
         requestAnimationFrame(gameLoop);
+    }
     };
-
+    var restart = function(){
+    
+    }
    
 
     var initGame = function() {

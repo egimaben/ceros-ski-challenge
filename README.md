@@ -59,11 +59,11 @@ Completed
 * jump
 * Score
 * setup testing runnable with `npm test`, ready to write tests
+* pausing / resume with `space` bar
 
 Not Completed
 * score storage
 * Feed the Rhino
 * game resetting
 * increase skier speed as game progresses
-* pausing / resume
 * deploy to server
