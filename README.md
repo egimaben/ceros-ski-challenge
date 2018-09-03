@@ -60,9 +60,9 @@ Completed
 * Score
 * setup testing runnable with `npm test`, ready to write tests
 * pausing / resume with `space` bar
+* score persistence across browser refreshes
 
 Not Completed
-* score storage
 * Feed the Rhino
 * game resetting
 * increase skier speed as game progresses

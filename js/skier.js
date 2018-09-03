@@ -17,6 +17,10 @@ function Skier(){
     var getScore = function(){
         return currentScore;
     }
+    var setScore = function(score){
+        
+        currentScore = parseInt(score);
+    }
     var score = function (){
         currentScore += 1;
     }
@@ -143,7 +147,8 @@ function Skier(){
         turnRightWards:turnRightWards,
         jump:jump,
         score:score,
-        getScore:getScore
+        getScore:getScore,
+        setScore:setScore
 
     }
 

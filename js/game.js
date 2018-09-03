@@ -184,8 +184,12 @@ var setupKeyhandler = function() {
 
         skier.didHitObstacle();
         ctx.drawImage(loadedAssets['bg'],0,0,gameWidth,gameHeight);
-        
-        document.getElementById('score').innerHTML = skier.getScore();
+        var score = skier.getScore();
+        localStorage.setItem('score',score);
+        // console.log(localStorage);
+        // console.log('setting score '+score);
+        document.getElementById('score').innerHTML = score;
+
         skier.draw();
 
         drawObstacles();
@@ -198,12 +202,17 @@ var setupKeyhandler = function() {
     var restart = function(){
     
     }
-   
+    var isNumber = function(n) {
+        return !isNaN(parseInt(n)) && isFinite(n);
+      }
 
     var initGame = function() {
         setupKeyhandler();
         loadAssets().then(function() {
             placeInitialObstacles();
+            if(initStage && isNumber(localStorage.getItem('score'))){
+                skier.setScore(localStorage.getItem('score'));
+            }
             initStage = false;
             requestAnimationFrame(gameLoop);
         });
