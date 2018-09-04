@@ -7,6 +7,7 @@ function Skier(){
     var currentScore = 0;
     var crashCount = 0;
     var crashed = false;
+    var level = 1;
     function jump() {              
         if (!jumping) {
           jumping = true;
@@ -16,11 +17,27 @@ function Skier(){
       function land(){
           jumping=false;
       }
+      var setLevel = function(l){
+        level = parseInt(l);
+      }
+      var getLevel = function(){
+          return level;
+      }
+      var upLevel = function(){
+          level++;
+          skierSpeed+=2;
+      }
     var reset = function(){
         currentScore = 0;
         crashCount = 0;
         crashed = false;
         skierSpeed = 6;
+    }
+    var getSpeed = function(){
+        return skierSpeed;
+    }
+    var setSpeed = function(speed){
+        skierSpeed = parseInt(speed);
     }
     var getCrashCount = function(){
         return crashCount;
@@ -87,9 +104,6 @@ function Skier(){
                 break;
         }
         return skierAssetName;
-    }
-    var uncrash = function(){
-        if(crashed)crashed=false;
     }
     //continuous loop
     var draw = function() {
@@ -171,8 +185,12 @@ function Skier(){
         getScore:getScore,
         setScore:setScore,
         getCrashCount:getCrashCount,
-        reset:reset
-
+        reset:reset,
+        getSpeed:getSpeed,
+        setSpeed:setSpeed,
+        upLevel:upLevel,
+        setLevel:setLevel,
+        getLevel:getLevel
     }
 
     

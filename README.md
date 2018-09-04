@@ -63,8 +63,8 @@ Completed
 * score persistence across browser refreshes
 * game resetting (press space and choose restart)
 * Game over after 3 crashes
+* increase skier speed as game progresses
 
 Not Completed
 * Feed the Rhino
-* increase skier speed as game progresses
 * deploy to server

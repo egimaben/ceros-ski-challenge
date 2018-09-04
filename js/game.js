@@ -203,8 +203,16 @@ var setupKeyhandler = function() {
         skier.didHitObstacle();
         ctx.drawImage(loadedAssets['bg'],0,0,gameWidth,gameHeight);
         var score = skier.getScore();
+        
+        if(score!==0 && score%1000===0){
+            skier.upLevel();     
+        }
+        var level = skier.getLevel();
         localStorage.setItem('score',score);
+        localStorage.setItem('level',level);
+
         document.getElementById('score').innerHTML = score;
+        document.getElementById('level').innerHTML = level;
 
         skier.draw();
 
@@ -217,6 +225,7 @@ var setupKeyhandler = function() {
     };
     var restart = function(){
         localStorage.removeItem('score');
+        localStorage.removeItem('level');
         location.reload();
     }
     var gameover = function(){
@@ -234,6 +243,12 @@ var setupKeyhandler = function() {
             placeInitialObstacles();
             if(initStage && isNumber(localStorage.getItem('score'))){
                 skier.setScore(localStorage.getItem('score'));
+            }
+            if(initStage && isNumber(localStorage.getItem('speed'))){
+                skier.setSpeed(localStorage.getItem('speed'));
+            }
+            if(initStage && isNumber(localStorage.getItem('level'))){
+                skier.setLevel(localStorage.getItem('level'));
             }
             initStage = false;
             requestAnimationFrame(gameLoop);
