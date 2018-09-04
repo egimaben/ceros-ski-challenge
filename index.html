@@ -25,10 +25,18 @@
             font-family: Helvetica, sans-serif;
             cursor: default;
         }
+        .level {
+            position: relative;
+            top: 0;
+            right: 0;
+            color: #FF7F00;
+            font-family: Helvetica, sans-serif;
+            cursor: default;
+        }
         .game-over {
             position: absolute;
-            top: 100px;
-            left: 210px;
+            top: 50%;
+            left: 40%;
             color: #FF7F00;
             font-family: Helvetica, sans-serif;
             font-size: 30px;
@@ -44,15 +52,26 @@
         .game-over span:hover {
             color: #FFD700;
         }
-        .loading {
+        .restart {
             position: absolute;
-            top: 100px;
-            left: 210px;
+            top: 50%;
+            left: 40%;
             color: #FF7F00;
             font-family: Helvetica, sans-serif;
             font-size: 30px;
             cursor: default;
+            display:none
         }
+        .restart span {
+            font-size: 20px;
+            cursor: pointer;
+            position: relative;
+            left: 50px;
+        }
+        .restart span:hover {
+            color: #FFD700;
+        }
+       
     </style>
     <link rel="stylesheet" type="text/css" href="css/game.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
@@ -69,9 +88,11 @@
 <div class= 'game'>
     <div class = 'game_space'>
     </div>
+    
     <div class="score">SCORE: <span id="score"></span></div>
-    <!-- <div class="game-over" id="game-over">GAME OVER<p><span onclick="restart()">Restart</span></p></div> -->
-   <!-- <div class="loading" id="loading">LOADING...<p>Please wait</p></div> -->
+    <div class="level">LEVEL: <span id="level">1</span></div>
+    <div class="game-over" id="game-over">GAME OVER<p><span id='game-end'>Restart</span></p></div>
+    <div class="restart" id="restart">Game Paused<p><span id="restart-game">Restart</span></p><p><span>press SPACE to resume</span></p></div>
                   
 </div>
 </body>

@@ -2,7 +2,14 @@ $(document).ready(function() {
 var skier = new Skier();
 var paused = false;
 var initStage = true;
-
+var endgame = false;
+var gameEnded = false;
+$('#game-end').click(function(){
+    restart();
+});
+$('#restart-game').click(function(){
+    restart();
+});
 var calculateOpenPosition = function(minX, maxX, minY, maxY) {
     var x = _.random(minX, maxX);
     var y = _.random(minY, maxY);
@@ -21,6 +28,7 @@ var calculateOpenPosition = function(minX, maxX, minY, maxY) {
         }
     }
 };
+
 
 //called continuosly when direction is down
 var placeRandomObstacle = function(minX, maxX, minY, maxY) {
@@ -77,6 +85,7 @@ var setupKeyhandler = function() {
         switch(event.which){
             case control.SPACE:
             paused = !paused;
+            document.getElementById('restart').style.display = paused?"block":"none";
             requestAnimationFrame(gameLoop);
             ;break;
         }
@@ -170,7 +179,16 @@ var setupKeyhandler = function() {
 
    
     var gameLoop = function() {
-        if(!paused){
+        if(endgame && !gameEnded){
+            // console.log('ending game');
+            gameover();
+        }
+        if(!paused && !gameEnded){
+            
+            var crashCount = skier.getCrashCount();
+        if(crashCount==3){
+            endgame = true;
+        }
         ctx.save();
 
         // Retina support
@@ -186,8 +204,6 @@ var setupKeyhandler = function() {
         ctx.drawImage(loadedAssets['bg'],0,0,gameWidth,gameHeight);
         var score = skier.getScore();
         localStorage.setItem('score',score);
-        // console.log(localStorage);
-        // console.log('setting score '+score);
         document.getElementById('score').innerHTML = score;
 
         skier.draw();
@@ -200,13 +216,19 @@ var setupKeyhandler = function() {
     }
     };
     var restart = function(){
-    
+        localStorage.removeItem('score');
+        location.reload();
+    }
+    var gameover = function(){
+        gameEnded= true;
+        document.getElementById('game-over').style.display = "block";
     }
     var isNumber = function(n) {
         return !isNaN(parseInt(n)) && isFinite(n);
       }
 
     var initGame = function() {
+        
         setupKeyhandler();
         loadAssets().then(function() {
             placeInitialObstacles();

@@ -61,9 +61,10 @@ Completed
 * setup testing runnable with `npm test`, ready to write tests
 * pausing / resume with `space` bar
 * score persistence across browser refreshes
+* game resetting (press space and choose restart)
+* Game over after 3 crashes
 
 Not Completed
 * Feed the Rhino
-* game resetting
 * increase skier speed as game progresses
 * deploy to server
