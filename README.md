@@ -59,11 +59,11 @@ Completed
 * jump
 * Score
 * setup testing runnable with `npm test`, ready to write tests
-* pausing / resume with `space` bar
+* Provide a way to pause and resume the game with `space` bar
 * score persistence across browser refreshes
-* game resetting (press space and choose restart)
+* Provide a way to reset the game once the game is over(press space and choose restart)
 * Game over after 3 crashes
-* increase skier speed as game progresses
+* Skier should get faster as the game progresses
 
 Not Completed
 * Feed the Rhino
